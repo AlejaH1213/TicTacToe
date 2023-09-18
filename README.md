@@ -60,16 +60,20 @@ There is an interesting approach to the [Tic Tac Toe win condition in React](htt
 
 - As a user, I can see a three by three grid game board on the page. DONE
 - As a user, I can click on a square to mark it. DONE
-* I'll need to add an onclick method and a function that handles what happens when the onclick gets triggered and what that onclick is going to do is to mark the square 
+    * I'll need to add an onclick method and a function that handles what happens when the onclick gets triggered and what that onclick is going to do is to mark the square 
 
 - As a user, my partner can click on a square after me and see their mark.
     *We'll need to refactor the handleClick function so that the second and fourth and .etc clicks are circles instead of x's 
     Pseudocode:
     name: handleClick
-    input: idk
-    output: idk 
-    process: idk  
+    input: selected index, when someone clicks thats the index that is selected. 
+    output: and x or a zero depending on the value
+    process: we create another variable that has the value of our squares and put a use state on it, and set the use state to false.
+    - we create a conditional that evaluate if the "value" was false then to put an x and if the value was true to put a zero. and in each conditional statement we updated the set squares and updated the set value back to false or true to be able to have an interactive app.  
 - As a user, I can't click on a square that has already been marked.
+    - first we checked if the square is not already marked and that also ensures that if its marked then nothing happens and so the player cant click on it twice, then we created a if statement inside that if statement that checked if the value was false or true to assign it the right symbol and then we updated it in the board. 
+    
+
 - As a user, when either my partner or I win the game (three squares in a row: horizontally, vertically, or diagonally), I can see a notice telling me which player won.
 - As a user, I can't play the game after the game has been won.
 - As a user, if there are no more squares available, I can see a notice telling me that the game has ended.
