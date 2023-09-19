@@ -1,7 +1,14 @@
+body {
+  background-color: black;
+}
 .square {
-  border: 2px solid black;
+  border: 2px solid rgb(154, 112, 237);
   height: 100px;
   width: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .grid {
@@ -11,8 +18,26 @@
   margin: 0 auto; 
   font-size: 40px;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-/* .footer {
-  text-align: end;
-} */
+footer {
+  text-align: center; 
+  padding: 20px;
+  color: rgb(154, 112, 237); 
+  margin-top: auto; 
+}
+
+.title{
+  text-align: center;
+  font-size: 100 px;
+  margin: 25px ;
+  color: rgb(154, 112, 237);
+}
+
+.winnerText {
+  text-align: center;
+  font-size: 80px;
+  color: rgb(154, 112, 237);
+}
