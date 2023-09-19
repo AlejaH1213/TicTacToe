@@ -75,6 +75,10 @@ There is an interesting approach to the [Tic Tac Toe win condition in React](htt
     
 
 - As a user, when either my partner or I win the game (three squares in a row: horizontally, vertically, or diagonally), I can see a notice telling me which player won.
+    -We need to start by making note of which indexes have been clicked. create a variable with the winning array of indexes. create a function that checks if 3 of the x's or 3 of the o's are lined up horizontally, vertically or diagonally. create conditional, if the o's or the x's match one of the array combinations, then its a winner. use a for loop to iterate through all the arrays and if one of those arrays matches the user input, then its a winner. 
+    -winner function will be storing a message, then tell the alert to print out the message the winner function is passing. 
+        - if winner is saying X player wins, then our alert message will print that message out. The variable winningPlayer has the function call.  
+
 - As a user, I can't play the game after the game has been won.
 - As a user, if there are no more squares available, I can see a notice telling me that the game has ended.
 - As a user, I can click on a restart button that will clear the game board.
