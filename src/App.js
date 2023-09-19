@@ -67,14 +67,16 @@ const winner = () => {
   }
   return (
     <>
-      <h1>Tic Tac Toe</h1>
+      <h1 className="title">Tic Tac Toe</h1>
       <Square 
       squares={squares} 
       value={value} 
       handleClick={handleClick}
       restart={restart}
       />
+      <div className="winnerText">
       {winningPlayer}
+      </div>
     </>
   )
 }
