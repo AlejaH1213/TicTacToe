@@ -3,11 +3,13 @@ import Square from './components/Square'
 import './App.css'
 
 const App = () => {
+  // Here are the variables used in the tic tac toe logic
   const [squares, setSquares] = useState(Array(9).fill(null))
   const [value, setValue] = useState(true)
-  // const [selectedIndexArray, setSelectedIndexArray] = useState([])
   const [selectedX, setSelectedX] = useState([])
   const [selectedO, setSelectedO] = useState([])
+
+  // This is the function that deals with the user input of clicking and turns
   const handleClick = (selectedIndex) => {
     if (squares[selectedIndex] === null && !winner()) {
       if(value){
@@ -19,12 +21,11 @@ const App = () => {
       } 
       setSquares([...squares])
       setValue(!value)
-      // setSelectedIndexArray([...selectedIndexArray,selectedIndex])
       }
-      // console.log(selectedIndexArray, "selectedindexarray")
   }
-// console.log(value, "value")
-const winner = () => {
+
+  // This is the function that determines the winner
+  const winner = () => {
     const winningArray = [
       [0, 1, 2],
       [3, 4, 5],
@@ -34,30 +35,34 @@ const winner = () => {
       [2, 5, 8],
       [0, 4, 8],
       [2, 4, 6],
-  ]
+    ] 
     for (let index = 0; index < winningArray.length; index++) {
       const [a, b, c] = winningArray[index];
-    if (
-      selectedX.includes(a) &&
-      selectedX.includes(b) &&
-      selectedX.includes(c)
-    ){
+      if (
+        selectedX.includes(a) &&
+        selectedX.includes(b) &&
+        selectedX.includes(c)
+        ){
       return "❌ player wins"
-    } else if (
-      selectedO.includes(a) &&
-      selectedO.includes(b) &&
-      selectedO.includes(c)
-    ){
+        } 
+      else if (
+        selectedO.includes(a) &&
+        selectedO.includes(b) &&
+        selectedO.includes(c)
+        ){
       return "⭕️ player wins"
-    } 
+        } 
     }
-
-    if (selectedX.length + selectedO.length === 9) {
-      return "Game ended no player wins"
-    }
-    return null
+      if (selectedX.length + selectedO.length === 9) {
+        return "Game ended no player wins"
+        }
+      return null
   }
+  
+  // this variable is calling on the winner function
   const winningPlayer = winner()
+
+  // this function restarts the game
   const restart = () => {
     setValue(true)
     setSelectedO([])

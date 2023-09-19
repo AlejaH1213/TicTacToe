@@ -58,36 +58,29 @@ There is an interesting approach to the [Tic Tac Toe win condition in React](htt
 
 ### 📚 User Stories
 
-- As a user, I can see a three by three grid game board on the page. DONE
-- As a user, I can click on a square to mark it. DONE
-    * I'll need to add an onclick method and a function that handles what happens when the onclick gets triggered and what that onclick is going to do is to mark the square 
-
-- As a user, my partner can click on a square after me and see their mark. DONE
-    *We'll need to refactor the handleClick function so that the second and fourth and .etc clicks are circles instead of x's 
-    Pseudocode:
-    name: handleClick
-    input: selected index, when someone clicks thats the index that is selected. 
-    output: and x or a zero depending on the value
-    process: we create another variable that has the value of our squares and put a use state on it, and set the use state to false.
-    - we create a conditional that evaluate if the "value" was false then to put an x and if the value was true to put a zero. and in each conditional statement we updated the set squares and updated the set value back to false or true to be able to have an interactive app.  
-- As a user, I can't click on a square that has already been marked. DONE
-    - first we checked if the square is not already marked and that also ensures that if its marked then nothing happens and so the player cant click on it twice, then we created a if statement inside that if statement that checked if the value was false or true to assign it the right symbol and then we updated it in the board. 
-    
-
-- As a user, when either my partner or I win the game (three squares in a row: horizontally, vertically, or diagonally), I can see a notice telling me which player won. DONE
-    -We need to start by making note of which indexes have been clicked. create a variable with the winning array of indexes. create a function that checks if 3 of the x's or 3 of the o's are lined up horizontally, vertically or diagonally. create conditional, if the o's or the x's match one of the array combinations, then its a winner. use a for loop to iterate through all the arrays and if one of those arrays matches the user input, then its a winner. 
-    -winner function will be storing a message, then tell the alert to print out the message the winner function is passing. 
-        - if winner is saying X player wins, then our alert message will print that message out. The variable winningPlayer has the function call.  
-
-- As a user, I can't play the game after the game has been won. DONE
-    - we added a condition to the handleclick function so that you can only click if there is no winner 
-- As a user, if there are no more squares available, I can see a notice telling me that the game has ended. DONE
-    - we added another if statement that checked if the lenght of the selected X and selected O was equal to 9 meaning that all squares are clicked and return a message saying that the game has ended, no winners
-
+- As a user, I can see a three by three grid game board on the page.
+    - we created a map function inside a div container and styled it to make it look like a grid
+- As a user, I can click on a square to mark it.
+    - we added an onClick method and a function that handle the marking of the squares  
+- As a user, my partner can click on a square after me and see their mark.
+    - we refactored the handleClick function so that there were turns and a different mark in each turn
+    - we create a conditional that evaluate if the "value" was false then to put an x and if the value was true to put a zero and, in each conditional statement we updated the set squares and updated the set value back to false or true to be able to have an interactive app.  
+- As a user, I can't click on a square that has already been marked.
+     - first we checked if the square is not already marked and that also ensures that if its marked then nothing happens and so the player cant click on it twice, then we created a nested if statement that checked if the value was false or true to assign it the right symbol and then we updated it in the board.   
+- As a user, when either my partner or I win the game (three squares in a row: horizontally, vertically, or diagonally), I can see a notice telling me which player won.
+    -We started by noting which indexes have been clicked
+    -We create a variable with the winning array of indexes 
+    -We create a function that checks if 3 of the x's or 3 of the o's are lined up horizontally, vertically or diagonally
+    -We used a for loop to iterate through all the arrays and if one of those arrays matches the user input, then its a winner. 
+    -We create conditional statements that checked if the o's or the x's match one of the array combinations, and declare a winner   
+- As a user, I can't play the game after the game has been won. 
+    -We added a condition to the handleclick function so that you can only click if there is no winner 
+- As a user, if there are no more squares available, I can see a notice telling me that the game has ended.
+    -We added another if statement that checked if the lenght of the selected X and selected O was equal to 9 meaning that all squares are clicked and return a message saying that the game has ended, no winners
 - As a user, I can click on a restart button that will clear the game board.
-    -we need to add a button that when onclick, it triggers the function and restarts the game
-    - we need to create a function that will set all the states to their original value 
-    -we added the button in the Square.js and call it in the App.js
+    -We created a button that when onclick, it triggers the function and restarts the game
+    -We created a function that sets all the states to their original value 
+    -We added the button in the Square.js and call it in the App.js
     
 
 ### 🏔 Stretch Goals
