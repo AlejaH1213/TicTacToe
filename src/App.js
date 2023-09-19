@@ -9,7 +9,7 @@ const App = () => {
   const [selectedX, setSelectedX] = useState([])
   const [selectedO, setSelectedO] = useState([])
   const handleClick = (selectedIndex) => {
-    if (squares[selectedIndex] === null) {
+    if (squares[selectedIndex] === null && !winner()) {
       if(value){
         squares[selectedIndex] = "❌"
         setSelectedX([...selectedX, selectedIndex])
@@ -49,11 +49,22 @@ const winner = () => {
       selectedO.includes(c)
     ){
       return "⭕️ player wins"
+    } 
     }
+
+    if (selectedX.length + selectedO.length === 9) {
+      return "Game ended no player wins"
     }
     return null
   }
   const winningPlayer = winner()
+  const restart = () => {
+    setValue(true)
+    setSelectedO([])
+    setSelectedX([])
+    setSquares(Array(9).fill(null))
+
+  }
   return (
     <>
       <h1>Tic Tac Toe</h1>
@@ -61,6 +72,7 @@ const winner = () => {
       squares={squares} 
       value={value} 
       handleClick={handleClick}
+      restart={restart}
       />
       {winningPlayer}
     </>
